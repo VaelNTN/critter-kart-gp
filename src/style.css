@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+
+:root {
+  --bg: #07223b;
+  --card: rgba(9, 38, 66, 0.78);
+  --border: rgba(125, 211, 252, 0.25);
+  --font-display: 'Fredoka', system-ui, sans-serif;
+  --font-ui: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: #f8fafc;
+  font-family: var(--font-ui);
+}
+
+.ck-shell {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: max(12px, env(safe-area-inset-top)) 14px max(14px, env(safe-area-inset-bottom));
+  background: linear-gradient(175deg, #0ea5e9 0%, #0369a1 38%, #07223b 100%);
+  overflow-y: auto;
+}
+
+.ck-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ck-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: #fef08a;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.ck-sub {
+  margin: 2px 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #e0f2fe;
+}
+
+.ck-icon-btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: #f8fafc;
+  border-radius: 10px;
+  padding: 7px 11px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ck-hero-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.ck-hero-canvas {
+  width: 128px;
+  height: 88px;
+  flex-shrink: 0;
+}
+
+.ck-driver-name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: #fef08a;
+}
+
+.ck-kart-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #bae6fd;
+  margin-bottom: 6px;
+}
+
+.ck-stat-pills {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.ck-stat-pills span {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(2, 132, 199, 0.35);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ck-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 11px 12px;
+}
+
+.ck-section-lbl {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7dd3fc;
+  margin-bottom: 8px;
+}
+
+.ck-driver-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.ck-driver-btn {
+  padding: 8px 4px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(148, 210, 255, 0.2);
+  background: rgba(4, 24, 46, 0.65);
+  color: #f8fafc;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.ck-driver-btn.active {
+  border-color: #fef08a;
+  background: rgba(14, 165, 233, 0.32);
+}
+
+.ck-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+}
+
+.ck-mode-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.ck-seg-btn {
+  padding: 9px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(148, 210, 255, 0.2);
+  background: rgba(4, 24, 46, 0.6);
+  color: #cbd5e1;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ck-seg-btn.active {
+  border-color: #fef08a;
+  background: rgba(14, 165, 233, 0.35);
+  color: #ffffff;
+}
+
+.ck-cup-note {
+  margin: 8px 0 0;
+  font-size: 11.5px;
+  color: #bae6fd;
+}
+
+.ck-track-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.ck-track-btn {
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 210, 255, 0.2);
+  background: rgba(4, 24, 46, 0.65);
+  color: #f8fafc;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.ck-track-btn strong {
+  font-size: 12px;
+}
+
+.ck-track-btn span {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.ck-track-btn.active {
+  border-color: #fef08a;
+  background: rgba(14, 165, 233, 0.3);
+}
+
+.ck-start-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.4);
+}
+
+.ck-secondary-btn {
+  width: 100%;
+  padding: 11px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(4, 24, 46, 0.8);
+  color: #e2e8f0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ==================== RACE HUD ==================== */
+.ck-race-shell {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.ck-race-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ck-race-hud {
+  position: absolute;
+  top: max(10px, env(safe-area-inset-top));
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  z-index: 20;
+}
+
+.ck-hud-pill {
+  padding: 7px 12px;
+  border-radius: 14px;
+  background: rgba(4, 24, 46, 0.78);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.ck-pos-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: #fef08a;
+}
+
+.ck-hud-meta {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e0f2fe;
+}
+
+.ck-item-box {
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(4, 24, 46, 0.84);
+  border: 2px solid var(--border);
+  color: #bae6fd;
+  font-family: var(--font-display);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ck-item-box.ready {
+  color: #fef08a;
+  box-shadow: 0 0 18px rgba(250, 204, 21, 0.45);
+}
+
+.ck-hud-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ck-track-badge {
+  display: none;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ck-controls {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 25;
+}
+
+.ck-steer-pad,
+.ck-action-pad {
+  display: flex;
+  gap: 8px;
+}
+
+.ck-ctrl-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(186, 230, 253, 0.42);
+  background: rgba(4, 24, 46, 0.68);
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.ck-ctrl-btn.pressed {
+  background: rgba(14, 165, 233, 0.85);
+}
+
+.ck-use-btn,
+.ck-drift-btn,
+.ck-brake-btn {
+  height: 60px;
+  padding: 0 14px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(186, 230, 253, 0.35);
+  background: rgba(4, 24, 46, 0.72);
+  color: #f8fafc;
+  font-family: var(--font-display);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.ck-use-btn.ready {
+  border-color: #fde047;
+  background: rgba(234, 88, 12, 0.82);
+}
+
+.ck-drift-btn.pressed {
+  border-color: #38bdf8;
+  background: rgba(14, 165, 233, 0.82);
+}
+
+.ck-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 12, 24, 0.78);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 50;
+}
+
+.ck-modal.open {
+  display: flex;
+}
+
+.ck-modal-card {
+  width: 100%;
+  max-width: 360px;
+  background: #082f49;
+  border: 1.5px solid var(--border);
+  border-radius: 22px;
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.ck-modal-card h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: #fef08a;
+}
+
+.ck-modal-card p {
+  margin: 4px 0 14px;
+  font-size: 12px;
+  color: #bae6fd;
+}
+
+.ck-standings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.ck-standing-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: rgba(4, 24, 46, 0.65);
+  font-size: 12.5px;
+}
+
+.ck-standing-row.me {
+  border: 1px solid #fef08a;
+  color: #fef08a;
+}
+
+.ck-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
